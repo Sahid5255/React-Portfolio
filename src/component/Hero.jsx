@@ -6,33 +6,103 @@ import medium from "./Assets/medium.svg";
 import angel from "./Assets/angel list.svg";
 
 export default function Hero() {
+  const socials = [
+    {
+      icon: Github,
+      label: "GitHub",
+      href: "https://github.com/Sahid5255/React-Portfolio",
+    },
+    {
+      icon: twitter,
+      label: "Twitter",
+      href: "https://twitter.com/your-username",
+    },
+    {
+      icon: angel,
+      label: "AngelList",
+      href: "https://angel.co/u/your-username",
+    },
+    {
+      icon: medium,
+      label: "Medium",
+      href: "https://medium.com/@your-username",
+    },
+  ];
+
   return (
     <section className="hero">
-      <div className="icon-container">
-        <img src={Github} alt="Github"/>
-        <img src={medium} alt=""/>
-        <img src={twitter} alt="twitter"/>
-        <img src={angel} alt="angel"/>
-      </div>
+      <div className="hero__container">
 
+        {/* Social icons - desktop */}
+        <div className="hero__rail">
+          {socials.map(({ icon, label, href }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="hero__icon-link"
+            >
+              <img
+                src={icon}
+                alt={label}
+                className="hero__icon"
+              />
+            </a>
+          ))}
+        </div>
 
-      <div className="hero-content">
-        <h1>
-          Hey There <br /> I'm Sahid
-        </h1>
+        {/* Text content */}
+        <div className="hero__content">
+          <h1 className="hero__title">
+            Hey There.
+            <br />
+            I'm Sahid.
+          </h1>
 
-        <h2>I'm a Software Developer</h2>
+          <h2 className="hero__subtitle">
+            I'm a Software Developer
+          </h2>
 
-        <p>
-          I can help you build a product, feature or website. Look
-          through some of my work and experience! If you like what
-          you see and have a project you need coded, don't hesitate
-          to contact me.
-        </p>
-      </div>
+          <p className="hero__description">
+            I can help you build a product, feature or website.
+            Look through some of my work and experience! If you
+            like what you see and have a project you need coded,
+            don't hesitate to contact me.
+          </p>
 
-      <div>
-        <img src={illustration} alt="Developer illustration" />
+          {/* Social icons - mobile/tablet */}
+          <div className="hero__rail hero__rail--mobile">
+            {socials.map(({ icon, label, href }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="hero__icon-link"
+              >
+                <img
+                  src={icon}
+                  alt={label}
+                  className="hero__icon"
+                />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Illustration */}
+        <div className="hero__illustration-wrap">
+          <img
+            src={illustration}
+            alt="Illustration of Victory's workspace"
+            className="hero__illustration"
+            draggable="false"
+          />
+        </div>
+
       </div>
     </section>
   );
