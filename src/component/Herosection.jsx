@@ -5,11 +5,6 @@ import imgPlaceholder1 from "./Assets/Img Placeholder (1).png";
 import imgPlaceholder2 from "./Assets/Img Placeholder (2).png";
 import MaskGroup from "./Assets/Mask Group.png";
 
-
-// =========================================================
-// FEATURED PROJECT
-// =========================================================
-
 const featuredProject = {
   title: "Multi-Post Stories",
   description:
@@ -17,11 +12,6 @@ const featuredProject = {
   tags: ["CSS", "HTML", "Bootstrap", "Ruby"],
   cta: "See Project",
 };
-
-
-// =========================================================
-// PROJECTS
-// =========================================================
 
 const projects = [
   {
@@ -79,11 +69,6 @@ const projects = [
   },
 ];
 
-
-// =========================================================
-// TAG COMPONENT
-// =========================================================
-
 function Tag({ children, onDark }) {
   return (
     <span className={onDark ? "tag tag--on-dark" : "tag"}>
@@ -91,11 +76,6 @@ function Tag({ children, onDark }) {
     </span>
   );
 }
-
-
-// =========================================================
-// FEATURED CARD
-// =========================================================
 
 function FeaturedCard({ project }) {
   return (
@@ -137,11 +117,6 @@ function FeaturedCard({ project }) {
   );
 }
 
-
-// =========================================================
-// PROJECT CARD
-// =========================================================
-
 function ProjectCard({ project, index }) {
 
   // First card = image only
@@ -157,10 +132,6 @@ function ProjectCard({ project, index }) {
       }}
     >
 
-      {/* =================================================
-          FIRST CARD
-          ONLY IMAGE - NO CONTENT
-      ================================================= */}
 
       {!isFirstCard && (
         <>
@@ -209,21 +180,11 @@ function ProjectCard({ project, index }) {
   );
 }
 
-
-// =========================================================
-// HEROSECTION
-// =========================================================
-
 export default function Herosection() {
 
   return (
 
     <section className="recent-works">
-
-
-      {/* =================================================
-          SECTION HEADING
-      ================================================= */}
 
       <div className="recent-works__heading">
 
@@ -235,22 +196,11 @@ export default function Herosection() {
 
       </div>
 
-
-      {/* =================================================
-          FEATURED PROJECT
-      ================================================= */}
-
       <div>
         <FeaturedCard
           project={featuredProject}
         />
       </div>
-
-
-      {/* =================================================
-          PROJECT GRID
-          3 COLUMNS × 2 ROWS
-      ================================================= */}
 
       <div className="project-grid">
 
