@@ -9,52 +9,226 @@ body {
 }
 
 .Navbar {
+  width: 100%;
+  height: 70px;
+  background-color: #2b1b1b;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 60px;
-  background-color: rgb(48, 31, 31);
+  justify-content: space-between;
+
+  padding: 0 40px;
+  box-sizing: border-box;
+
+  position: relative;
+  z-index: 1000;
 }
 
 .Navbar h1 {
   color: white;
-  font-size: 1.8rem;
+  font-size: 28px;
+  margin: 0;
 }
 
-.Navbar ul {
+/* Desktop Navbar links */
+.Navbar > ul {
   display: flex;
+  align-items: center;
+  gap: 40px;
+
   list-style: none;
-  gap: 50px;
-  font-size: 1rem;
+  margin: 0;
   padding: 0;
-  color: white;
 }
 
-.Navbar img {
-  width: 30px;
-  height: 30px;
+.Navbar > ul li {
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.Navbar > ul li:hover {
+  color: #ff6d00;
+}
+
+/* Hamburger icon */
+.Navbar > img {
+  width: 35px;
+  height: 35px;
+
+  cursor: pointer;
+
   display: none;
 }
 
+
 .Sidebar {
-  width: 30%;
-  padding: 0 100px;
-  height: 100vh;
-  background-color: rgb(52, 10, 190);
   position: fixed;
+
   top: 0;
   right: 0;
-  z-index: 100;
+
+  width: 300px;
+  height: 100vh;
+
+  background-color: #3b0bbd;
+
+  padding: 20px;
+  box-sizing: border-box;
+
+  z-index: 9999;
+
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
 }
 
-.Sidebar ul {
+/* Close button */
+.Sidebar__close {
+  display: block;
+
+  margin-left: auto;
+
+  background: transparent;
+  border: none;
+
+  font-size: 28px;
+
+  cursor: pointer;
+}
+
+/* Sidebar menu */
+.Sidebar__menu {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+
+  align-items: flex-start;
+
+  gap: 30px;
+
   list-style: none;
-  margin-left: auto;
-  font-size: 1.2rem;
+
+  margin: 80px 0 0;
+  padding: 0;
+}
+
+/* Sidebar list items */
+.Sidebar__menu li {
+  display: block;
+
+  margin: 0;
+  padding: 0;
+}
+
+/* Sidebar links */
+.Sidebar__menu a {
+  display: block;
+
   color: white;
+
+  text-decoration: none;
+
+  font-size: 22px;
+  font-weight: 600;
+
+  padding: 10px 0;
+
+  transition: 0.3s ease;
+}
+
+.Sidebar__menu a:hover {
+  color: #ff6d00;
+  transform: translateX(5px);
+}
+
+
+@media (max-width: 768px) {
+
+  .Navbar {
+    height: 65px;
+
+    padding: 0 20px;
+  }
+
+  .Navbar h1 {
+    font-size: 24px;
+  }
+
+  /* Hide desktop navigation */
+  .Navbar > ul {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .Navbar > img {
+    display: block;
+
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Sidebar */
+  .Sidebar {
+    width: 280px;
+    min-height: 100vh;
+  }
+
+  .Sidebar__menu {
+    margin-top: 70px;
+
+    gap: 25px;
+  }
+
+  .Sidebar__menu a {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .Navbar {
+    padding: 0 15px;
+  }
+
+  .Navbar h1 {
+    font-size: 22px;
+  }
+
+  .Navbar > img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .Sidebar {
+    width: 250px;
+  }
+
+  .Sidebar__menu {
+    margin-top: 60px;
+    gap: 20px;
+  }
+
+  .Sidebar__menu a {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .Navbar {
+    height: 80px;
+    padding: 0 60px;
+  }
+
+  .Navbar h1 {
+    font-size: 30px;
+  }
+
+  .Navbar > ul {
+    gap: 50px;
+  }
+
+  .Navbar > ul li {
+    font-size: 19px;
+  }
 }
 
 .recent-works {
@@ -708,18 +882,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 900px) {
 
   .project-grid {
@@ -729,24 +891,6 @@ body {
 }
 
 @media (max-width: 600px) {
-
-  .Navbar {
-    padding: 0 25px;
-  }
-
-  .Navbar ul {
-    display: none;
-  }
-
-  .Navbar img {
-    display: block;
-  }
-
-
-  .Sidebar {
-    width: 70%;
-    padding: 0 40px;
-  }
 
   .about-me__lists {
   display: flex;

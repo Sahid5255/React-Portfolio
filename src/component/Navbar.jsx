@@ -5,12 +5,12 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   function handleSidebar() {
-    console.log("clicked");
     setIsOpen((prev) => !prev);
   }
 
   return (
-    <div className="Navbar">
+    <nav className="Navbar">
+
       <h1>My Logo</h1>
 
       <ul>
@@ -25,7 +25,10 @@ export default function Navbar() {
         alt="hamburger"
       />
 
-      {isOpen && <Sidebar setIsOpen={setIsOpen} />}
-    </div>
+      {isOpen && (
+        <Sidebar setIsOpen={setIsOpen} />
+      )}
+
+    </nav>
   );
 }

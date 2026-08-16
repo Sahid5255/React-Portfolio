@@ -1,14 +1,30 @@
-import React from 'react'
+import React from "react";
 
-export default function Sidebar({setIsOpen}) {
+export default function Sidebar({ setIsOpen }) {
   return (
-    <div className='Sidebar'>
-        <h2 onClick= {() => setIsOpen(false)}>❌</h2>
-          <ul>
-            <li>Portfolio</li>
-            <li>About</li>
-            <li>Contact</li>
-        </ul>
-        </div>
-  )
+    <aside className="Sidebar">
+
+      <button
+        className="Sidebar__close"
+        onClick={() => setIsOpen(false)}
+      >
+        ❌
+      </button>
+
+      <ul className="Sidebar__menu">
+        <li>
+          <a href="#portfolio">Portfolio</a>
+        </li>
+
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+
+    </aside>
+  );
 }
